@@ -18,6 +18,12 @@ html {
 
   body {
     background: $LightGrayishCyan;
-    font-family: "Spartan";
+
+    &,
+    button,
+    input,
+    textarea {
+      font-family: "Spartan";
+    }
   }
 }
