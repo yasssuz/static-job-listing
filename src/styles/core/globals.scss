@@ -1,0 +1,23 @@
+@use './colors' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+
+  &,
+  body {
+    position: relative;
+  }
+
+  body {
+    background: $LightGrayishCyan;
+    font-family: "Spartan";
+  }
+}
