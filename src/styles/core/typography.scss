@@ -1,0 +1,8 @@
+@use './colors' as *;
+@use './functions' as *;
+
+.small-green-info {
+  font-weight: 700;
+  color: $DesaturatedDarkCyan;
+  font-size: rem(14);
+}
