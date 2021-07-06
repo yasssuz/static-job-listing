@@ -1,0 +1,12 @@
+@use '../core/functions' as *;
+@use './jobs.scss';
+
+.app {
+  padding: 0 rem(24);
+  max-width: rem(1206);
+  margin: rem(55) auto 0;
+
+  &.filtering {
+    margin-top: rem(145);
+  }
+}
