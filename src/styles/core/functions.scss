@@ -1,17 +1,20 @@
+@use 'sass:math';
+
 $html-font-size: 16px;
 
-//PX TO REM
 @function stripUnit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, $value * 0 + 1);
+  // [DEPRECATED] @return $value / ($value * 0 + 1);
 }
+
+//PX TO REM
 @function rem($pxValue) {
-  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+  // [DEPRECATED] @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
 }
 
 //PX TO EM
-@function stripUnit($value) {
-  @return $value / ($value * 0 + 1);
-}
 @function em($pxValue) {
-  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}em;
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}em;
+  // [DEPRECATED] @return #{stripUnit($pxValue) / stripUnit($html-font-size)}em;
 }
