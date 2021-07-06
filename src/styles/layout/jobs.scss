@@ -1,0 +1,124 @@
+@use '../core/functions' as *;
+@use '../core/colors' as *;
+
+.jobs {
+  &__list {
+    list-style: none;
+
+    .job {
+      background: white;
+      border-radius: rem(12);
+      position: relative;
+      // overflow: auto;
+      padding: rem(33) rem(22) rem(25);
+
+      &-featured {
+        &::before {
+          content: "";
+          height: 100%;
+          width: 6px;
+          background: $DesaturatedDarkCyan;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-top-left-radius: rem(20);
+          border-bottom-left-radius: rem(20);
+        }
+      }
+
+      img {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        top: rem(-24);
+        z-index: 99;
+      }
+
+      .top-info {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .new {
+          margin: 0 rem(10) 0 rem(18);
+          background: $DesaturatedDarkCyan;
+        }
+
+        .featured {
+          background: $VeryDarkGrayishCyan;
+        }
+
+        div {
+          font-size: rem(11);
+          font-weight: 700;
+          text-transform: uppercase;
+          color: white;
+          padding: em(11) em(11) em(6);
+          border-radius: rem(20);
+        }
+      }
+
+      .main-info {
+        margin-top: rem(11);
+
+        h1 {
+          font-size: rem(17);
+          margin-bottom: rem(12);
+        }
+
+        .specifics {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          span {
+            color: $DarkGrayishCyan;
+            font-size: rem(14);
+          }
+
+          .point {
+            width: 4px;
+            height: 4px;
+            margin: 0 10px;
+            background: $DarkGrayishCyan;
+            border-radius: 50%;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .bottom-info {
+        margin-top: rem(17);
+        padding-top: rem(17);
+        border-top: 1px solid hsla(180, 8%, 52%, 0.5);
+
+        ul {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          gap: rem(18);
+        }
+
+        li {
+          background: $LightGrayishCyanTablets;
+          padding: rem(10);
+          border-radius: rem(6);
+          transition: background-color 0.3s ease;
+          cursor: pointer;
+
+          small {
+            transition: color 0.3s ease;
+          }
+
+          &:hover {
+            background: $DesaturatedDarkCyan;
+
+            small {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
