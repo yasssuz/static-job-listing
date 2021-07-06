@@ -1,0 +1,83 @@
+@use '../core/colors' as *;
+@use '../core/functions' as *;
+
+.header {
+  height: rem(150);
+  background: url("../../assets/bg-header-mobile.svg") center no-repeat,
+    $DesaturatedDarkCyan;
+  background-size: cover;
+  padding: 0 rem(24);
+
+  @media screen and (min-width: 900px) {
+    background: url("../../assets/bg-header-desktop.svg") center no-repeat,
+      $DesaturatedDarkCyan;
+    background-size: cover;
+  }
+
+  &__filter-bar {
+    // min-height: rem(120);
+    background: #ffffff;
+    transform: translateY(rem(115));
+    border-radius: rem(8);
+    padding: rem(20);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: rem(1158);
+    margin: 0 auto;
+  }
+
+  &__filter-options {
+    list-style: none;
+    display: flex;
+    gap: rem(15);
+    flex-wrap: wrap;
+
+    .option {
+      display: flex;
+      background: $LightGrayishCyanTablets;
+      align-items: center;
+      border-radius: rem(5);
+      overflow: hidden;
+      height: rem(30);
+
+      small {
+        margin: 0 rem(9);
+      }
+
+      .remove-option {
+        padding: rem(5);
+        background: $DesaturatedDarkCyan;
+        border: none;
+        height: rem(30);
+        width: rem(32);
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+
+        svg {
+          pointer-events: none;
+        }
+
+        &:hover {
+          background: $VeryDarkGrayishCyan;
+        }
+      }
+    }
+  }
+
+  &__clear-options {
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    color: $DarkGrayishCyan;
+    font-size: rem(15);
+    margin-left: rem(15);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      color: $DesaturatedDarkCyan;
+    }
+  }
+}
