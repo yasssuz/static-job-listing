@@ -4,6 +4,8 @@
 .jobs {
   &__list {
     list-style: none;
+    display: grid;
+    gap: rem(45);
 
     .job {
       background: white;
