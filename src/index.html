@@ -1,13 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Job Filtener</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="The best Job Filtener app out there" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="./styles/index.scss" />
   </head>
   <body>
-    hello
-    <!-- <script type="module" src="/main.js"></script> -->
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <header class="header">
+      <div class="header__filter-bar">
+        <ul class="header__filter-options">
+          <li class="option">
+            <small class="small-green-info">Javascript</small>
+            <button class="remove-option">
+              <img src="./assets/icon-remove.svg" alt="remove option" />
+            </button>
+          </li>
+          <li class="option">
+            <small class="small-green-info">React</small>
+            <button class="remove-option">
+              <img src="./assets/icon-remove.svg" alt="remove option" />
+            </button>
+          </li>
+          <li class="option">
+            <small class="small-green-info">Angular</small>
+            <button class="remove-option">
+              <img src="./assets/icon-remove.svg" alt="remove option" />
+            </button>
+          </li>
+          <li class="option">
+            <small class="small-green-info">Angular</small>
+            <button class="remove-option">
+              <img src="./assets/icon-remove.svg" alt="remove option" />
+            </button>
+          </li>
+        </ul>
+        <button class="header__clear-options">Clear</button>
+      </div>
+    </header>
+
+    <script src="./scripts/app.js" async defer></script>
   </body>
 </html>
