@@ -3,13 +3,13 @@
 
 .header {
   height: rem(150);
-  background: url("../../assets/bg-header-mobile.svg") center no-repeat,
+  background: url("../assets/bg-header-mobile.svg") center no-repeat,
     $DesaturatedDarkCyan;
   background-size: cover;
   padding: 0 rem(24);
 
   @media screen and (min-width: 900px) {
-    background: url("../../assets/bg-header-desktop.svg") center no-repeat,
+    background: url("../assets/bg-header-desktop.svg") center no-repeat,
       $DesaturatedDarkCyan;
     background-size: cover;
   }
