@@ -110,6 +110,7 @@
 
           small {
             transition: color 0.3s ease;
+            pointer-events: none;
           }
 
           &:hover {
