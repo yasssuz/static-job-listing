@@ -4,7 +4,7 @@ import { getQuery } from "./utils";
 function mountRequirements(tools) {
   return tools.map(
     tool => `
-      <li>
+      <li class="filter-option-add">
         <small class="small-green-info">${tool}</small>
       </li>
     `
@@ -34,10 +34,10 @@ function mountJobElement(job) {
     </main>
     <footer class="bottom-info">
       <ul>
-        <li>
+        <li class="filter-option-add">
           <small class="small-green-info">${job.role}</small>
         </li>
-        <li>
+        <li class="filter-option-add">
           <small class="small-green-info">${job.level}</small>
         </li>
         ${mountRequirements(job.languages)}
