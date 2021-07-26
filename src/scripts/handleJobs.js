@@ -4,9 +4,9 @@ import { getQuery } from "./utils";
 function mountRequirements(tools) {
   return tools.map(
     tool => `
-      <li class="filter-option-add">
-        <small class="small-green-info">${tool}</small>
-      </li>
+    <li class="filter-option-add">
+      <small class="small-green-info">${tool}</small>
+    </li>
     `
   );
 }
@@ -14,7 +14,14 @@ function mountRequirements(tools) {
 function mountJobElement(job) {
   const mountedJob = document.createElement("li");
 
-  mountedJob.setAttribute("class", `job ${job.featured && "job-featured"}`);
+  mountedJob.setAttribute(
+    "class",
+    `job ${job.featured && "job-featured"} ${job.role} ${
+      job.level
+    } ${job.languages.map(language => ` ${language} `)} ${job.tools.map(
+      tool => ` ${tool} `
+    )}`
+  );
   mountedJob.innerHTML = `
     <img src="${job.logo}" alt=${job.company} />
     <header class="top-info">
