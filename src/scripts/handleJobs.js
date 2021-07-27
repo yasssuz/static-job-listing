@@ -14,9 +14,10 @@ function mountRequirements(tools) {
 function mountJobElement(job) {
   const mountedJob = document.createElement("li");
 
+  mountedJob.setAttribute("class", "job");
   mountedJob.setAttribute(
-    "class",
-    `job ${job.featured && "job-featured"} ${job.role} ${
+    "data-filter",
+    `${job.featured && "job-featured"} ${job.role} ${
       job.level
     } ${job.languages.map(language => ` ${language} `)} ${job.tools.map(
       tool => ` ${tool} `
