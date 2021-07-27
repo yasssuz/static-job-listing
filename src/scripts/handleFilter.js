@@ -9,10 +9,11 @@ export function handleFilterBar() {
   if (bar.firstElementChild == null) {
     bar.parentElement.style.display = "none";
     main.classList.remove("filtering");
-  } else {
-    bar.parentElement.style.display = "flex";
-    main.classList.add("filtering");
+    return;
   }
+
+  bar.parentElement.style.display = "flex";
+  main.classList.add("filtering");
 }
 
 function validateFilterOptions(newOpt) {
@@ -42,13 +43,8 @@ export function addFilterOption(e) {
   const optionValue = e.target.firstElementChild.textContent;
   const bar = getQuery(".header__filter-options");
 
-  try {
-    validateFilterOptions(optionValue);
-    filters.push(optionValue);
-  } catch (err) {
-    return;
-  }
-
+  validateFilterOptions(optionValue);
+  filters.push(optionValue);
   option.setAttribute("class", optionValue);
   option.innerHTML = `
     <small class="small-green-info">${optionValue}</small>
@@ -72,8 +68,8 @@ export function removeFilterOption(e) {
 
 export function clearFilterOptions() {
   const bar = getAllQueries(".header__filter-options li");
-
   filters = [];
+
   bar.forEach(option => option.remove());
   handleFilterBar();
   handleFiltering();
