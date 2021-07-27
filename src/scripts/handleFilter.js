@@ -1,5 +1,7 @@
 import { getAllQueries, getQuery } from "./utils";
 
+let filters = [];
+
 export function handleFilterBar() {
   const bar = getQuery(".header__filter-options");
   const main = getQuery(".app");
@@ -23,48 +25,17 @@ function validateFilterOptions(newOpt) {
   });
 }
 
-function handleFiltering(addingOption) {
-  const filterOptions = getAllQueries(".header__filter-options li");
+function handleFiltering() {
   const jobs = getAllQueries(".jobs__list .job");
 
-  addingOption
-    ? filterOptions.forEach(opt => {
-        jobs.forEach(job => {
-          if (job.style.display === "none") return;
+  jobs.forEach(job => {
+    job.style.display = "none";
 
-          if (!job.classList.contains(opt.classList.value)) {
-            job.style.display = "none";
-            return;
-          }
-
-          job.style.display = "block";
-        });
-      })
-    : jobs.forEach(job => {
-        filterOptions.forEach(opt => {
-          if (job.style.display === "none") {
-            if (job.classList.contains(opt.classList.value)) {
-              job.style.display = "block";
-            }
-          }
-        });
-      });
-
-  filterOptions.length === 0 &&
-    jobs.forEach(job => {
+    if (filters.every(opt => job.dataset.filter.includes(opt))) {
       job.style.display = "block";
-    });
+    }
+  });
 }
-
-// filterOptions.forEach(opt => {
-//   jobs.forEach(job => {
-//     if (job.style.display === "none") {
-//       if (job.classList.contains(opt.classList.value)) {
-//         job.style.display = "block";
-//       }
-//     }
-//   });
-// });
 
 export function addFilterOption(e) {
   const option = document.createElement("li");
@@ -73,6 +44,7 @@ export function addFilterOption(e) {
 
   try {
     validateFilterOptions(optionValue);
+    filters.push(optionValue);
   } catch (err) {
     return;
   }
@@ -86,19 +58,23 @@ export function addFilterOption(e) {
   `;
   bar.appendChild(option);
   handleFilterBar();
-  handleFiltering(true);
+  handleFiltering();
 }
 
 export function removeFilterOption(e) {
   e.target.parentElement.remove();
+  const index = filters.indexOf(e.target.previousElementSibling.textContent);
+
+  filters.splice(index, 1);
   handleFilterBar();
-  handleFiltering(false);
+  handleFiltering();
 }
 
 export function clearFilterOptions() {
   const bar = getAllQueries(".header__filter-options li");
 
+  filters = [];
   bar.forEach(option => option.remove());
   handleFilterBar();
-  handleFiltering(false);
+  handleFiltering();
 }
