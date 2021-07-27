@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-reactive-sass-html-functional-js-bundled-with-vitejs--HSH71VJV](https://www.frontendmentor.io/solutions/responsive-reactive-sass-html-functional-js-bundled-with-vitejs--HSH71VJV)
 - Live Site URL: [https://static-job-listing.vercel.app/](https://static-job-listing.vercel.app/)
 
 ## My process
