@@ -16,13 +16,17 @@ window.addEventListener("load", () => {
   );
 });
 
-window.addEventListener("click", () => {
+getQuery(".header__clear-options").addEventListener(
+  "click",
+  clearFilterOptions
+);
+
+const observer = new MutationObserver(() => {
   getAllQueries(".header__filter-options li").forEach(opt =>
     opt.addEventListener("click", removeFilterOption)
   );
+});
 
-  getQuery(".header__clear-options").addEventListener(
-    "click",
-    clearFilterOptions
-  );
+observer.observe(getQuery(".header__filter-options"), {
+  childList: true,
 });
