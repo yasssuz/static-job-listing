@@ -14,14 +14,12 @@ function mountRequirements(tools) {
 function mountJobElement(job) {
   const mountedJob = document.createElement("li");
 
-  mountedJob.setAttribute("class", "job");
+  mountedJob.setAttribute("class", `job ${job.featured && "job-featured"}`);
   mountedJob.setAttribute(
     "data-filter",
-    `${job.featured && "job-featured"} ${job.role} ${
-      job.level
-    } ${job.languages.map(language => ` ${language} `)} ${job.tools.map(
-      tool => ` ${tool} `
-    )}`
+    ` ${job.role} ${job.level} ${job.languages.map(
+      language => ` ${language} `
+    )} ${job.tools.map(tool => ` ${tool} `)}`
   );
   mountedJob.innerHTML = `
     <img src="${job.logo}" alt=${job.company} />
